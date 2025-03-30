@@ -278,6 +278,8 @@ class UDFormatter(Formatter, ABC):
             return self.format_pron(analysis)
         elif pos == "Num":
             return self.format_num(analysis)
+        elif pos == "Adj":
+            return self.format_adj(analysis)
 
         # result = f"[{analysis.dict_item.lemma}:{analysis.dict_item.primary_pos.value}"
         # if analysis.dict_item.secondary_pos != SecondaryPos.NONE:
