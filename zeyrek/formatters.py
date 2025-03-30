@@ -46,14 +46,14 @@ class UDFormatter(Formatter, ABC):
         self.add_surface = add_surface
 
     def format_adj(self, analysis: SingleAnalysis) -> str:
-        ids = [m.id_ for m in analysis.morphemes]
+        #ids = [m.id_ for m in analysis.morphemes]
         case = ''
         number = ''
         person = ''
         npsor = ''
         psor = ''
-        if 'Noun' not in ids:
-            return self.format(analysis)
+        #if 'Noun' not in ids:
+        #    return self.format(analysis)
 
         for m in analysis.morphemes:
             morph = m[0]
