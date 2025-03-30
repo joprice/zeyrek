@@ -55,13 +55,14 @@ class UDFormatter(Formatter, ABC):
         if 'Noun' not in ids:
             return self.format(analysis)
 
-        for m_id in ids:
-            if m_id in cases:
-                case = m_id
+        for m in analysis.morphemes:
+            morph = m[0]
+            if morph.id_ in cases:
+                case = morph.id_
             else:
-                possessive = UDFormatter.possessives.get(m_id)
+                possessive = UDFormatter.possessives.get(morph.id_)
                 if possessive is None:
-                    agreement = UDFormatter.agreement_values.get(m_id)
+                    agreement = UDFormatter.agreement_values.get(morph.id_)
                     if agreement is not None:
                         number, person = agreement
                 else:
